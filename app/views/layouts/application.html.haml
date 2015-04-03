@@ -1,0 +1,26 @@
+!!!5
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Ver4ror
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      .panel.panel-primary.col-sm-offset-8
+        .panel-heading
+          %p Пользователь
+        .panel-body
+          dfaafd
+
+      %nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            %ul.nav.navbar-nav
+              %li
+                %a.glpyphicon.glyphicon-flag
+                  %span Tasks
+
+
+    = yield

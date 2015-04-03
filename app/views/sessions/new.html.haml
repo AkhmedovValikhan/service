@@ -1,0 +1,23 @@
+.container
+  .row
+    .panel.panel-success
+      .panel-heading
+        %p Tasks
+      .panel-body
+
+        -if flash[:alert]
+          .alert.alert-danger
+            =flash[:alert]
+
+        =form_for :session, url: login_path do |f|
+          =f.label :login
+          =f.text_field :login, class: 'form-control'
+          =f.label :password
+          =f.password_field :password, class: 'form-control'
+
+          =f.submit "Войти", class: "btn btn-success"
+
+  .row
+    =debug params
+    =debug flash[:user]
+    =debug params[:session]
