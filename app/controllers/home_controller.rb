@@ -1,12 +1,7 @@
 class HomeController < ApplicationController
-
+  before_action :require_user
   def index
-    @user = User.new
-  end
-
-  def sign_in
-    @user = User.find_by(login: params[:login]) 
-    redirect 
+    
   end
 
   private

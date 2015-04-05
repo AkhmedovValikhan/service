@@ -10,17 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
-@font-face {
-  font-family: 'glyphicons-halflings-regular';
-  src:url('glyphicons-halflings-regular.eot');
-  src:url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-    url('glyphicons-halflings-regular.svg#') format('svg'),
-    url('glyphicons-halflings-regular.woff') format('woff'),
-    url('glyphicons-halflings-regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import '_bootstrap';
+
+

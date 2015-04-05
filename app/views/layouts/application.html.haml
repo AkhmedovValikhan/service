@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Ver4ror
+    = yield :title
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -12,15 +12,25 @@
         .panel-heading
           %p Пользователь
         .panel-body
-          dfaafd
+          %p=current_user.login.capitalize
 
       %nav.navbar.navbar-default
         .container-fluid
           .navbar-header
-            %ul.nav.navbar-nav
+          .collapse.navbar-collapse.navbar-menubuilder
+            %ul.nav.navbar-nav.navbar-left
               %li
                 %a.glpyphicon.glyphicon-flag
                   %span Tasks
+
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                =link_to "Выйти", logout_path, method: 'delete'
+              %li
+                %a
+                  %strong=current_user.login.capitalize
+              
+
 
 
     = yield

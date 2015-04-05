@@ -57,7 +57,7 @@ class CreateLayoutFromSchema < ActiveRecord::Migration
     create_table :devices do |t|
       t.string  :title
       t.integer :brand_id
-      t.integer :category_id
+      t.integer :device_cat_id
       t.timestamps
     end
     
@@ -71,15 +71,10 @@ class CreateLayoutFromSchema < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :order_tasks do |t|
-      t.integer :order_id
-      t.integer :task_id
-      t.timestamps
-    end
-
     create_table :tasks do |t|
       t.string :title
       t.decimal :price, precision: 12, scale: 2
+      t.integer :order_id
       t.timestamps
     end
 
@@ -91,9 +86,14 @@ class CreateLayoutFromSchema < ActiveRecord::Migration
 
     create_table :spares do |t|
       t.string :title
-      t.integer :category_id
+      t.integer :spare_cat_id
       t.integer :brand_id
       t.integer :device_cat_id
+      t.timestamps
+    end
+
+    create_table :spare_cats do |t|
+      t.string :title
       t.timestamps
     end
 
@@ -113,6 +113,7 @@ class CreateLayoutFromSchema < ActiveRecord::Migration
     create_table :users do |t|
       t.string   :login
       t.string   :password_digest
+      t.string   :remember_token
       t.integer  :role_id
       t.integer  :employee_id
       t.timestamps

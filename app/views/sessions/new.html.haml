@@ -1,23 +1,32 @@
-.container
-  .row
-    .panel.panel-success
-      .panel-heading
-        %p Tasks
-      .panel-body
+!!!5
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Вход в систему
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      .row
+        .panel.panel-success
+          .panel-heading
+            %p Выполните вход
+          .panel-body
 
-        -if flash[:alert]
-          .alert.alert-danger
-            =flash[:alert]
+            -if flash[:alert]
+              .alert.alert-danger
+                =flash[:alert]
 
-        =form_for :session, url: login_path do |f|
-          =f.label :login
-          =f.text_field :login, class: 'form-control'
-          =f.label :password
-          =f.password_field :password, class: 'form-control'
+            =form_for :session, url: login_path do |f|
+              =f.label :login
+              =f.text_field :login, class: 'form-control'
+              =f.label :password
+              =f.password_field :password, class: 'form-control'
+              %hr
+              =f.submit "Войти", class: "btn btn-success col-sm-offset-11"
 
-          =f.submit "Войти", class: "btn btn-success"
-
-  .row
-    =debug params
-    =debug flash[:user]
-    =debug params[:session]
+      .row
+        =debug params
+        =debug flash[:user]
+        =debug params[:session]
