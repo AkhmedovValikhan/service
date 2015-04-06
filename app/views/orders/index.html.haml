@@ -1,0 +1,14 @@
+-content_for :title do
+  %title Заказы
+
+.container
+  =render partial: "layouts/status_tabs"
+
+  .tab-content.current#tab-all
+    =render partial: "table", locals: {orders: @orders}
+  .tab-content#tab-pending
+    =render partial: "table", locals: {orders: pendings}
+
+  =debug @orders.count
+
+

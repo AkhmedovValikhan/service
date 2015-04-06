@@ -1,0 +1,26 @@
+// Place all the styles related to the orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ul.nav-tabs li.current{
+  background: #ededed;
+}
+
+ul.nav-tabs li{
+  text-align: center;
+  cursor: pointer;
+  width: 50px;
+}
+
+.tab-content{
+  display: none;
+  opacity: 0;
+  transition: all .15s linear;
+}
+
+.tab-content.current {
+  opacity: 1;
+  display: inherit;
+  transition: all .15s linear;
+
+}
+

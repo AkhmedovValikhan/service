@@ -1,0 +1,28 @@
+-if orders.count > 0
+  %table.table
+    %thead
+      %tr
+        %th Квитанция
+        %th Аппарат
+        %th Сер.Номер
+        %th Неисправность
+        %th Клиент
+        %th Срочность
+        %th Дата приемки
+        %th Статус
+        %th Ор. дата готовности
+
+    %tbody
+      -orders.each do |order|
+        %tr
+          %td=order.id
+          %td=order.device.title
+          %td=order.serial
+          %td=order.bug
+          %td=order.client.last_name
+          %td=order.urgent?
+          %td=order.reception_date
+          %td=order.status.title
+-else
+  .well.well-sm
+    %p.lead Заказов нету

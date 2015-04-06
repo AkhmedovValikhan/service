@@ -5,9 +5,10 @@ class CreateLayoutFromSchema < ActiveRecord::Migration
       t.integer  :master_id
       t.integer  :dispatcher_id
       t.integer  :device_id
-      t.string   :serail
+      t.string   :serial
       t.integer  :imei
       t.string   :bug
+      t.boolean  :urgent #срочность
       t.integer  :status_id
       t.string   :dispatchers_note
       t.string   :masters_note
@@ -78,7 +79,7 @@ class CreateLayoutFromSchema < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :task_spares do |t|
+    create_table :tasks_spares do |t|
       t.integer :task_id
       t.integer :spare_id
       t.timestamps

@@ -1,0 +1,16 @@
+.row
+  %ul.nav.nav-tabs.nav-justified#tabs
+    %li.current{ :role => 'presentation', :data => {tab: "all"}}
+      =link_to "Все", 
+    %li{ :role => 'presentation', :data => {tab: "accepted"} }
+      %a{ :href =>"#" } Принят в ремонт
+    %li{ :role => 'presentation', :data => {tab: "pending"}}
+      %a{ :href =>"#" } Ожидает запчасть
+    %li{ :role => 'presentation', :data => {tab: "repairing"} }
+      %a{ :href =>"#" } В ремонте
+    %li{ :role => 'presentation', :data => {tab: "remote"} }
+      %a{ :href =>"#" } В удаленном СЦ
+    %li{ :role => 'presentation', :data => {tab: "agreement"} }
+      %a{ :href =>"#" } Согласование
+    %li{ :role => 'presentation', :data => {tab: "agreed"} }
+      %a{ :href =>"#" } Согласовано

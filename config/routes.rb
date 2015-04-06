@@ -55,6 +55,14 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root 'home#index'
+  resources :devices
+  resources :tasks
+  resources :brands
+  resources :clients
+  resources :device_cats
+  resources :employees
+  resources :orders
+  resources :spares
 
 
   get 'home/' => 'home#index'

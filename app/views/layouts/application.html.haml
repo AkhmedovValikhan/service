@@ -8,20 +8,13 @@
     = csrf_meta_tags
   %body
     %header
-      .panel.panel-primary.col-sm-offset-8
-        .panel-heading
-          %p Пользователь
-        .panel-body
-          %p=current_user.login.capitalize
-
       %nav.navbar.navbar-default
         .container-fluid
           .navbar-header
           .collapse.navbar-collapse.navbar-menubuilder
             %ul.nav.navbar-nav.navbar-left
               %li
-                %a.glpyphicon.glyphicon-flag
-                  %span Tasks
+                =link_to "Заказы", orders_path
 
             %ul.nav.navbar-nav.navbar-right
               %li

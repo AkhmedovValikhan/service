@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :login, presence: true, length: {maximum: 50}
   has_secure_password
   validates :password, length: {minimum: 6}
+  belongs_to :employee
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

@@ -1,0 +1,22 @@
+
+-content_for :title do
+  %title Бренды
+
+.container
+  .row
+    %table.table
+      %thead
+        %tr 
+          %th #
+          %th Title
+      %tbody
+        -i = 0
+        -@brands.each do |brand|
+          %tr
+            %td=i+=1
+            %td
+              %strong=brand.title
+              %ul
+                -brand.devices.order("title ASC").each do |dev|
+                  %li=dev.title
+
